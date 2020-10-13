@@ -1,0 +1,3 @@
+id is : 1, name is : John, salary is : 100000.0
+id is : 2, name is : Jay, salary is : 250000.0
+id is : 3, name is : Roy, salary is : 300000.0
