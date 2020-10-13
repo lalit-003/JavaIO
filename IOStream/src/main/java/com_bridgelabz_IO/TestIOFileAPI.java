@@ -12,7 +12,7 @@ import java.util.stream.IntStream;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-public class TestEmployeePayroll {
+public class TestIOFileAPI {
 
 	private static String HOME = "D:\\BridgeLabz-Fellowship";
 	private static String PLAY_WITH_NIO = "TempPlayGround";
@@ -60,5 +60,12 @@ public class TestEmployeePayroll {
 			.forEach(System.out::println);
 }
 
+	//watching what is happening  in the directory
+	@Test
+	public void givenADirectoryWhenWatchedListsAllTheActivities() throws IOException {
+		Path dir = Paths.get(HOME + "/" + PLAY_WITH_NIO);
+		Files.list(dir).filter(Files::isRegularFile).forEach(System.out::println);
+		new WatchService(dir).processEvents();
+	}
 	
 }
