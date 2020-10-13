@@ -40,6 +40,21 @@ public class EmployeePayrollService {
 		}
 	}
 	
+	public void printData(IOService ioService) {
+		if (ioService.equals(IOService.FILE_IO))
+			new EmployeePayrollFileIOService().printData();
+	}
+
+	public long countEntries(IOService ioService) {
+		long entries = 0;
+		if (ioService.equals(IOService.FILE_IO))
+		{
+	      entries =	 new EmployeePayrollFileIOService().countEntries();
+		}
+		return entries;
+	}
+
+	
 	
 //	public static void main(String[] args) {
 //		
